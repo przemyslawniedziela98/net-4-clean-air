@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Net4CleanAir{% endblock %}
+{% block content %}
+<h2>Upload CSV and Index</h2>
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <input class="form-control d-none" type="file" id="csv_file" name="csv_file" accept=".csv" onchange="updateFileName()">
+
+        <div class="input-group">
+            <label for="csv_file" class="btn btn-secondary mb-0">Choose file</label>
+            <input type="text" id="file_name_display" class="form-control" placeholder="No file chosen" readonly>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Index CSV</button>
+</form>
+
+<script>
+function updateFileName() {
+    const input = document.getElementById('csv_file');
+    const display = document.getElementById('file_name_display');
+    if (input.files.length > 0) {
+        display.value = input.files[0].name;
+    } else {
+        display.value = '';
+    }
+}
+</script>
+{% endblock %}

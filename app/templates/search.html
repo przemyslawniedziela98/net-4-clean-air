@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Search: Net4CleanAir{% endblock %}
+{% block content %}
+<h2>Search Collection</h2>
+<form method="post" class="row g-2 mb-3 align-items-center">
+    <div class="col-md-7">
+        <input type="text" class="form-control" name="query" placeholder="Enter your query" value="{{ request.form.query or '' }}">
+    </div>
+    <div class="col-md-2">
+        <div class="input-group">
+            <span class="input-group-text">Nr of results</span>
+            <input type="number" class="form-control" name="top_k" min="1" value="{{ top_k }}">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <button type="submit" class="btn btn-success w-100">Search</button>
+    </div>
+</form>
+
+{% if results %}
+<h3 class="mt-4">Results</h3>
+<div class="list-group">
+    {% for r in results %}
+    <div class="list-group-item">
+        <p>Score: {{ '%.4f'|format(r.score) }}</p>
+
+        {% if r.payload %}
+            <p>Title: {{ r.payload.get('TITLE OF THE PAPER', '') }}</p>
+
+            <details>
+                <summary>Payload </summary>
+                <table class="table table-sm table-bordered mt-2">
+                    <tbody>
+                        {% for key, value in r.payload.items() %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </details>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

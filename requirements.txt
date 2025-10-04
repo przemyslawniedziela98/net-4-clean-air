@@ -1,0 +1,8 @@
+Flask==3.0.3
+Werkzeug==3.1.2
+sentence-transformers==3.2.0
+numpy==1.26.4
+pandas==2.2.3
+qdrant-client==1.15.1
+rich==13.9.4
+python-dotenv==1.0.1
