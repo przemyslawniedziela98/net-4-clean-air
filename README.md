@@ -12,7 +12,6 @@ The app allows users to query and explore literature review results, providing e
 Python, Flask, Qdrant (vector search), SentenceTransformers (text embeddings), OpenAI, Jinja2 + Bootstrap (UI), Docker
 
 **Local Setup**
-Make sure that 
 1. Clone the repo:
    ```bash
    git clone https://github.com/przemyslawniedziela98/net-4-clean-air
