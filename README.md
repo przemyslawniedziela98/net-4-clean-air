@@ -21,8 +21,8 @@ Make sure that
     ```bash
    export OPENAI_API_KEY="your_api_key"
 
-3. Run Qdrant via Docker:
-Make sure you have Docker installed and running.
+3. Run Qdrant via Docker: <br>
+Make sure you have Docker locally installed and running.
     ```bash
     ./run_docker.sh
 
