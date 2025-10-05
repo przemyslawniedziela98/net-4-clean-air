@@ -4,6 +4,7 @@ from werkzeug.utils import secure_filename
 import os
 from typing import List, Dict, Any
 
+from app.services.chat import ChatService
 from app.services.csv_loader import CSVLoader
 from app.services.embedder import Embedder
 from app.services.qdrant_wrapper import QdrantWrapper
@@ -109,3 +110,30 @@ def search() -> str:
                 flash(f'Error during search: {e}', 'danger')
 
     return render_template('search.html', results=results, top_k=top_k)
+
+@routes.route('/chat', methods=['GET', 'POST'])
+def chat() -> str:
+    """ChatGPT assistant that answers questions based on Qdrant embeddings.
+    
+    Returns: 
+        str: Rendered HTML page with chat.
+    """
+    answer = ""
+    context_docs = []
+    top_k = 5
+
+    if request.method == 'POST':
+        question = request.form.get('question', '')
+        top_k = int(request.form.get('top_k', top_k))
+
+        if not question:
+            flash("Please enter a question.", "warning")
+        elif qwrap is None:
+            flash("No collection indexed yet.", "danger")
+        else:
+            chat_service = ChatService(qwrap, embedder)
+            result = chat_service.answer_question(question, top_k=top_k)
+            answer = result["answer"]
+            context_docs = result["context_docs"]
+
+    return render_template("chat.html", answer=answer, context_docs=context_docs, top_k=top_k)
