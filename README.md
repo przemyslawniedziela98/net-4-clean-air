@@ -1,20 +1,17 @@
 # Net4CleanAir Literature Review Explorer
 
-**Project Description:**  
+## **Project Description**  
 This application supports the exploration of literature and market review results from **CA23139 - Network for Indoor Air Cleaning (Net4CleanAir)**.  
 
 The Net4CleanAir project aims to consolidate accessible information on air cleaning technologies and create an international, interdisciplinary network of experts and stakeholders. 
 
-**Application Purpose:**  
+## **Application Purpose**  
 The app allows users to query and explore literature review results, providing embeddings-based search across indexed papers. Users can quickly find papers by topics, aims, findings, and other metadata, presented in an interactive interface.
 
-**Technology Stack:**  
+## **Technology Stack**  
 Python, Flask, Qdrant (vector search), SentenceTransformers (text embeddings), OpenAI, Jinja2 + Bootstrap (UI), Docker
 
----
-**Local Setup**
-Local Development Setup
-
+## **Local Setup**
 ### 1. Clone the repository
 
 ```bash
@@ -25,7 +22,6 @@ cd net-4-clean-air
 Alternatively, download it via GitHub web interface:  
 [https://github.com/przemyslawniedziela98/net-4-clean-air](https://github.com/przemyslawniedziela98/net-4-clean-air)
 
----
 
 ### 2. Set your OpenAI API Key
 
@@ -80,7 +76,7 @@ If you have [Git Bash](https://gitforwindows.org/) installed, you can run `./run
 
 Once Flask starts, open your browser and go to:
 
-[http://localhost:5000](http://localhost:5001)
+[http://localhost:5001](http://localhost:5001)
 
 You should see the Net4CleanAir interface.
 
@@ -90,7 +86,6 @@ You should see the Net4CleanAir interface.
 docker stop $(docker ps -q --filter ancestor=qdrant/qdrant)
 ```
 
----
 
 ## Notes
 
