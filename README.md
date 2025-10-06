@@ -25,7 +25,7 @@ Alternatively, download it via GitHub web interface:
 
 ### 2. Set your OpenAI API Key
 
-You need a valid OpenAI API key to generate embeddings and run semantic search.  
+You need a valid OpenAI API key to use chat capabilities.  
 If you don’t have one, you can create it here: [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
 
 #### macOS / Linux (bash/zsh):
