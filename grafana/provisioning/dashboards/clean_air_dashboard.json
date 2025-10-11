@@ -1,0 +1,134 @@
+{
+    "id": null,
+    "title": "Clean Air Metrics",
+    "tags": ["chatservice", "embedder", "qdrant"],
+    "timezone": "browser",
+    "schemaVersion": 36,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+      {
+        "type": "timeseries",
+        "title": "Qdrant Upsert Total",
+        "datasource": "Prometheus",
+        "targets": [{ "expr": "qdrant_upsert_total", "legendFormat": "total", "refId": "A" }],
+        "gridPos": { "x": 0, "y": 0, "w": 12, "h": 6 }
+      },
+      {
+        "type": "timeseries",
+        "title": "Qdrant Search Total",
+        "datasource": "Prometheus",
+        "targets": [{ "expr": "qdrant_search_total", "legendFormat": "total", "refId": "B" }],
+        "gridPos": { "x": 12, "y": 0, "w": 12, "h": 6 }
+      },
+      {
+        "type": "timeseries",
+        "title": "Qdrant Search Latency (avg seconds)",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(qdrant_search_latency_seconds_sum[5m]) / rate(qdrant_search_latency_seconds_count[5m])",
+            "legendFormat": "avg latency",
+            "refId": "C"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 6, "w": 12, "h": 6 }
+      },
+      {
+        "type": "timeseries",
+        "title": "Qdrant Upsert Latency (avg seconds)",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(qdrant_upsert_latency_seconds_sum[5m]) / rate(qdrant_upsert_latency_seconds_count[5m])",
+            "legendFormat": "avg latency",
+            "refId": "D"
+          }
+        ],
+        "gridPos": { "x": 12, "y": 6, "w": 12, "h": 6 }
+      },
+      {
+        "type": "timeseries",
+        "title": "Qdrant Collection Size",
+        "datasource": "Prometheus",
+        "targets": [{ "expr": "qdrant_collection_size", "legendFormat": "{{collection}}", "refId": "E" }],
+        "gridPos": { "x": 0, "y": 12, "w": 12, "h": 6 }
+      },
+      {
+        "type": "timeseries",
+        "title": "Embedder Requests Total",
+        "datasource": "Prometheus",
+        "targets": [{ "expr": "embedder_requests_total", "legendFormat": "{{model_name}}", "refId": "F" }],
+        "gridPos": { "x": 12, "y": 12, "w": 12, "h": 6 }
+      },
+      {
+        "type": "timeseries",
+        "title": "Embedder Errors Total",
+        "datasource": "Prometheus",
+        "targets": [{ "expr": "embedder_errors_total", "legendFormat": "{{model_name}}", "refId": "G" }],
+        "gridPos": { "x": 0, "y": 18, "w": 12, "h": 6 }
+      },
+      {
+        "type": "timeseries",
+        "title": "Embedder Duration (avg seconds)",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(embedder_duration_seconds_sum[5m]) / rate(embedder_duration_seconds_count[5m])",
+            "legendFormat": "{{model_name}} avg",
+            "refId": "H"
+          }
+        ],
+        "gridPos": { "x": 12, "y": 18, "w": 12, "h": 6 }
+      },
+      {
+        "type": "timeseries",
+        "title": "Current Embedding Load",
+        "datasource": "Prometheus",
+        "targets": [{ "expr": "embedder_in_progress", "legendFormat": "{{model_name}}", "refId": "I" }],
+        "gridPos": { "x": 0, "y": 24, "w": 12, "h": 6 }
+      },
+      {
+        "type": "timeseries",
+        "title": "ChatService Requests",
+        "datasource": "Prometheus",
+        "targets": [{ "expr": "chatservice_requests_total", "legendFormat": "{{model}}", "refId": "J" }],
+        "gridPos": { "x": 12, "y": 24, "w": 12, "h": 6 }
+      },
+      {
+        "type": "timeseries",
+        "title": "ChatService Errors",
+        "datasource": "Prometheus",
+        "targets": [{ "expr": "chatservice_errors_total", "legendFormat": "{{model}} - {{stage}}", "refId": "K" }],
+        "gridPos": { "x": 0, "y": 30, "w": 12, "h": 6 }
+      },
+      {
+        "type": "timeseries",
+        "title": "ChatService Request Duration (avg seconds)",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(chatservice_request_duration_seconds_sum[5m]) / rate(chatservice_request_duration_seconds_count[5m])",
+            "legendFormat": "{{model}} avg",
+            "refId": "L"
+          }
+        ],
+        "gridPos": { "x": 12, "y": 30, "w": 12, "h": 6 }
+      },
+      {
+        "type": "timeseries",
+        "title": "OpenAI API Latency (avg seconds)",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(chatservice_openai_latency_seconds_sum[5m]) / rate(chatservice_openai_latency_seconds_count[5m])",
+            "legendFormat": "{{model}} avg",
+            "refId": "M"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 36, "w": 24, "h": 6 }
+      }
+    ],
+    "templating": { "list": [] }
+  }
+  
