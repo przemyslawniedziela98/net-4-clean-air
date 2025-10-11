@@ -1,8 +1,11 @@
 from __future__ import annotations
 from typing import Iterable, Optional
+import time
 import numpy as np
 from sentence_transformers import SentenceTransformer
 from app.logger import logger
+from app.services.prometheus import metrics
+
 
 class Embedder:
     """Wrapper for computing text embeddings using SentenceTransformer.
@@ -24,7 +27,9 @@ class Embedder:
                 self._model = SentenceTransformer(self.model_name)
                 logger.info("Model loaded successfully")
             except Exception as e:
+                metrics.EMBEDDING_ERRORS.labels(model_name=self.model_name).inc()
                 logger.exception(f"Failed to load model '{self.model_name}': {e}")
+                metrics.EMBEDDING_ERRORS.labels(model_name=self.model_name).inc()
                 raise
 
     def embed(self, texts: Iterable[str], batch_size: int = 32) -> np.ndarray:
@@ -40,14 +45,26 @@ class Embedder:
         self._ensure_model()
         texts_list = list(texts)
         logger.info(f"Embedding {len(texts_list)} texts (batch_size={batch_size})")
+
+        metrics.EMBEDDING_REQUESTS.labels(model_name=self.model_name).inc()
+        metrics.CURRENT_EMBEDDING_LOAD.labels(model_name=self.model_name).inc()
+
+        start_time = time.perf_counter()
+        logger.info(f"Embedding {len(texts_list)} texts (batch_size={batch_size})")
+
         try:
             embeddings = self._model.encode(
                 texts_list,
                 batch_size=batch_size,
                 show_progress_bar=False
             )
-            logger.info(f"Generated embeddings with shape {embeddings.shape}")
+            duration = time.perf_counter() - start_time
+            metrics.EMBEDDING_DURATION.labels(model_name=self.model_name).observe(duration)
+            logger.info(f"Generated embeddings in {duration:.3f}s with shape {embeddings.shape}")
             return np.asarray(embeddings, dtype=np.float32)
         except Exception as e:
+            metrics.EMBEDDING_ERRORS.labels(model_name=self.model_name).inc()
             logger.exception(f"Error during embedding: {e}")
             raise
+        finally:
+            metrics.CURRENT_EMBEDDING_LOAD.labels(model_name=self.model_name).dec()

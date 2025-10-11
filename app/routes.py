@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, request, redirect, flash
+from flask import Blueprint, render_template, request, redirect, flash, Response
+from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
 from werkzeug.datastructures import FileStorage
 from werkzeug.utils import secure_filename
 import os
@@ -137,3 +138,13 @@ def chat() -> str:
             context_docs = result["context_docs"]
 
     return render_template("chat.html", answer=answer, context_docs=context_docs, top_k=top_k)
+
+@routes.route('/metrics')
+def custom_metrics() -> Response:
+    """
+    Serve all Prometheus metrics, including metrics from QdrantWrapper.
+
+    Returns:
+        Response: Flask Response object.
+    """
+    return Response(generate_latest(), mimetype=CONTENT_TYPE_LATEST)

@@ -8,6 +8,7 @@ from qdrant_client.http import models as qmodels
 from app.models import AppConfig
 from dataclasses import dataclass
 from app.logger import logger  
+from app.services.prometheus import metrics
 
 
 DEFAULT_DISTANCE = qmodels.Distance.COSINE
@@ -112,17 +113,19 @@ class QdrantWrapper:
         points = self._create_points(df, embeddings)
         batch_size = 128
 
-        for i in range(0, len(points), batch_size):
-            batch = points[i:i + batch_size]
-            try:
-                self.client.upsert(
-                    collection_name=self.collection_name,
-                    points=batch
-                )
-                logger.info(f"Upserted batch {i // batch_size + 1} ({len(batch)} points)")
-            except Exception as e:
-                logger.exception(f"Error during upsert of batch starting at index {i}: {e}")
-                raise
+        with metrics.QDRANT_UPSERT_LATENCY.time():
+            for i in range(0, len(points), batch_size):
+                batch = points[i:i + batch_size]
+                try:
+                    self.client.upsert(
+                        collection_name=self.collection_name,
+                        points=batch
+                    )
+                    logger.info(f"Upserted batch {i // batch_size + 1} ({len(batch)} points)")
+                    metrics.QDRANT_UPSERT_COUNTER.inc(len(batch))
+                except Exception as e:
+                    logger.exception(f"Error during upsert of batch starting at index {i}: {e}")
+                    raise
 
     def search(self, query_embedding: np.ndarray, top_k: int = 5, with_payload: bool = True) -> List[dict]:
         """Search the Qdrant collection using a query embedding.
@@ -137,15 +140,17 @@ class QdrantWrapper:
         """
         try:
             logger.info(f"Searching collection '{self.collection_name}' with top_k={top_k}")
-            hits = self.client.search(
-                collection_name=self.collection_name,
-                query_vector=query_embedding.tolist(),
-                limit=top_k,
-                with_payload=with_payload
-            )
-            results = [{'id': h.id, 'score': h.score, 'payload': h.payload} for h in hits]
-            logger.info(f"Search returned {len(results)} results")
-            return results
+            metrics.QDRANT_SEARCH_COUNTER.inc()  
+            with metrics.QDRANT_SEARCH_LATENCY.time(): 
+                hits = self.client.search(
+                    collection_name=self.collection_name,
+                    query_vector=query_embedding.tolist(),
+                    limit=top_k,
+                    with_payload=with_payload
+                )
+                results = [{'id': h.id, 'score': h.score, 'payload': h.payload} for h in hits]
+                logger.info(f"Search returned {len(results)} results")
+                return results
         except Exception as e:
             logger.exception(f"Search failed: {e}")
             raise
