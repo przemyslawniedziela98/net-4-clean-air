@@ -13,4 +13,5 @@ class AppConfig:
     embed_model: str = config.get('EMBEDDING', 'model_name', fallback='all-MiniLM-L6-v2')
     default_collection: str = config.get('EMBEDDING', 'default_collection', fallback='papers_poc')
     flask_secret_key: str = config.get('FLASK', 'flask_secret_key', fallback='test')
+    grafana_url: str = config.get('FLASK', 'grafana_url', fallback='http://localhost:3000/dashboards')
 

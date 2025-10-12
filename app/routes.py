@@ -148,3 +148,10 @@ def custom_metrics() -> Response:
         Response: Flask Response object.
     """
     return Response(generate_latest(), mimetype=CONTENT_TYPE_LATEST)
+
+@routes.route("/metrics_dashboard", methods=['GET', 'POST'])
+def metrics_dashboard():
+    return render_template(
+        "dashboard.html", 
+        grafana_url=config.grafana_url
+    )
