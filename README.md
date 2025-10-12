@@ -50,7 +50,7 @@ setx OPENAI_API_KEY "your_api_key"
 
 Then restart PowerShell so the variable is available in the new session.
 
-### 3. Run Qdrant (Vector DB) via Docker
+### 3. Run Qdrant (Vector DB), Prometheus and Grafana via Docker
 
 Make sure [Docker](https://docs.docker.com/get-docker/) is installed and running.
 
@@ -61,7 +61,7 @@ Start Qdrant locally using the provided script:
 ./run_docker.sh
 ```
 
-This will start a local Qdrant server (by default on port `6333`).  
+This will start a local Qdrant server (by default on port `6333`) as well as Prometheus (port `9090`) and Grafana (port `3000`).
 For local setup on Windows, it is necessary to use [Git Bash](https://gitforwindows.org/) or manually execute the commands from the Bash scripts in PowerShell.
 
 ---
@@ -84,13 +84,8 @@ Once Flask starts, open your browser and go to:
 
 [http://localhost:5000](http://localhost:5001)
 
-You should see the Net4CleanAir interface.
-
-### To stop Qdrant:
-
-```bash
-docker stop $(docker ps -q --filter ancestor=qdrant/qdrant)
-```
+You should see the Net4CleanAir interface. <br>
+Additionally, you can view monitoring dashboards via Grafana at http://localhost:3000.
 
 ---
 
