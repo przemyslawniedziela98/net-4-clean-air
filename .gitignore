@@ -33,3 +33,4 @@ pytest_cache/
 .DS_Store
 data/
 qdrant_storage/
+models/

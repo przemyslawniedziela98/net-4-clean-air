@@ -1,7 +1,9 @@
 from __future__ import annotations
 from typing import Iterable, Optional
+import os
 import time
 import numpy as np
+import torch
 from sentence_transformers import SentenceTransformer
 from app.logger import logger
 from app.services.prometheus import metrics
@@ -19,12 +21,19 @@ class Embedder:
         self.model_name = model_name
         self._model: Optional[SentenceTransformer] = None
 
+        if "TORCH_DISABLE_METATENSOR" not in os.environ:
+            os.environ["TORCH_DISABLE_METATENSOR"] = "1"
+        torch.set_grad_enabled(False)
+
+
     def _ensure_model(self) -> None:
         """Load the model if it hasn't been loaded yet."""
         if self._model is None:
             try:
                 logger.info(f"Loading embedding model '{self.model_name}'...")
-                self._model = SentenceTransformer(self.model_name)
+                device = 'cuda' if torch.cuda.is_available() else 'cpu'
+                self._model = SentenceTransformer(self.model_name, cache_folder='./models', device=device)
+                self._model.encode(["test"], show_progress_bar=False)
                 logger.info("Model loaded successfully")
             except Exception as e:
                 metrics.EMBEDDING_ERRORS.labels(model_name=self.model_name).inc()
