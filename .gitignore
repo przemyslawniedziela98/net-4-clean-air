@@ -34,3 +34,4 @@ pytest_cache/
 data/
 qdrant_storage/
 models/
+.coverage

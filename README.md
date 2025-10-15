@@ -94,6 +94,7 @@ Additionally, you can view monitoring dashboards via Grafana at http://localhost
 - The `run_flask.sh` script is idempotent – it can be safely re-run. It checks for a virtual environment and installs dependencies as needed.  
 - All configuration is currently done via environment variables (no `.env` file is required).  
 - Qdrant must be running in the background for search to work.
+- Tests can be run using the provided test script `run_tests.sh`.
 
 ---
 
