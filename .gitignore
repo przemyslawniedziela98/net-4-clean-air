@@ -35,3 +35,4 @@ data/
 qdrant_storage/
 models/
 .coverage
+*.csv
