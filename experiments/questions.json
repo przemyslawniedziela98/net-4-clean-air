@@ -1,0 +1,307 @@
+[
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "gr",
+    "question": "How many papers are there for each cleaning material?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "gr",
+    "question": "How many papers are there for each cleaning method?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "gr",
+    "question": "How many papers are there for each country?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "gr",
+    "question": "How many papers for each year have been reviewed?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "gr",
+    "question": "How many papers are considered irrelevant?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "gr",
+    "question": "Based on the number of papers, what is the level of technology development?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "gr",
+    "question": "How many papers provide information on secondary products?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "gr",
+    "question": "How many devices are remotely controlled?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "gr",
+    "question": "How many papers are there by indoor environment type?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "gr",
+    "question": "How many remotely controlled devices use open-source software?"
+  },
+  {
+    "topic": "Questions paraphrased",
+    "author": "gr",
+    "question": "Can you give the number of studies per type of cleaning material?"
+  },
+  {
+    "topic": "Questions paraphrased",
+    "author": "gr",
+    "question": "How many studies correspond to each cleaning method?"
+  },
+  {
+    "topic": "Questions paraphrased",
+    "author": "gr",
+    "question": "Can you list the number of papers per country?"
+  },
+  {
+    "topic": "Questions paraphrased",
+    "author": "gr",
+    "question": "How many papers were reviewed in each publication year?"
+  },
+  {
+    "topic": "Questions paraphrased",
+    "author": "gr",
+    "question": "What is the count of papers classified as irrelevant?"
+  },
+  {
+    "topic": "Questions paraphrased",
+    "author": "gr",
+    "question": "What is the technological development level indicated by the number of papers?"
+  },
+  {
+    "topic": "Questions paraphrased",
+    "author": "gr",
+    "question": "Can you tell me how many papers discuss secondary products?"
+  },
+  {
+    "topic": "Questions paraphrased",
+    "author": "gr",
+    "question": "What number of devices can be operated remotely?"
+  },
+  {
+    "topic": "Questions paraphrased",
+    "author": "gr",
+    "question": "How many research papers are there for various indoor environment types?"
+  },
+  {
+    "topic": "Questions paraphrased",
+    "author": "gr",
+    "question": "How many devices with remote control functionality use open-source code?"
+  },
+  {
+    "topic": "Questions paraphrased",
+    "author": "gr",
+    "question": "How many research papers are there for various indoor environment types?"
+  },
+  {
+    "topic": "Questions paraphrased",
+    "author": "gr",
+    "question": "How many devices with remote control functionality use open-source code?"
+  },
+  {
+    "topic": "Irrelevant questions",
+    "author": "gr",
+    "question": "Can you show me the latest smartphone models?"
+  },
+  {
+    "topic": "Irrelevant questions",
+    "author": "gr",
+    "question": "What is the recipe for homemade pizza dough?"
+  },
+  {
+    "topic": "Irrelevant questions",
+    "author": "gr",
+    "question": "What is the weather today?"
+  },
+  {
+    "topic": "Irrelevant questions",
+    "author": "gr",
+    "question": "What is the capital city of Greece?"
+  },
+  {
+    "topic": "Irrelevant questions",
+    "author": "gr",
+    "question": "How many moons does Jupiter have?"
+  },
+  {
+    "topic": "Irrelevant questions",
+    "author": "gr",
+    "question": "What are the best plants to decorate an office?"
+  },
+  {
+    "topic": "Irrelevant questions",
+    "author": "gr",
+    "question": "What are the best car air fresheners for 2025?"
+  },
+  {
+    "topic": "Irrelevant questions",
+    "author": "gr",
+    "question": "What is the count of articles related to air freshener marketing?"
+  },
+  {
+    "topic": "Irrelevant questions",
+    "author": "gr",
+    "question": "How many studies compare cooking recipes instead of air quality?"
+  },
+  {
+    "topic": "Irrelevant questions",
+    "author": "gr",
+    "question": "How many papers are there about vacuum cleaner brands?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "pl",
+    "question": "What are the main mechanisms by which HEPA filters remove airborne particles?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "pl",
+    "question": "How does particle size distribution affect filtration efficiency in fibrous filters?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "pl",
+    "question": "Why are CO\u2082 concentrations often used as a proxy for indoor ventilation rates?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "pl",
+    "question": "What role do volatile organic compounds (VOCs) play in indoor air quality assessments?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "pl",
+    "question": "How do temperature and relative humidity influence aerosol lifetime and deposition?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "pl",
+    "question": "What is the difference between mechanical filtration and electrostatic precipitation?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "pl",
+    "question": "Why are indoor PM2.5 concentrations sometimes higher than outdoor ones, even with closed windows?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "pl",
+    "question": "What are the most common sources of indoor ultrafine particles (UFPs) in residential environments?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "pl",
+    "question": "How does natural ventilation differ from mechanical ventilation in terms of pollutant dilution dynamics?"
+  },
+  {
+    "topic": "Questions existing in the Knowledge Base",
+    "author": "pl",
+    "question": "Why are long-term exposure studies essential for assessing the health impact of air purifiers?"
+  },
+  {
+    "topic": "Paraphrased Questions",
+    "author": "pl",
+    "question": "What level of indoor particulate reduction was observed when portable HEPA filters were used in homeless shelters across King County?"
+  },
+  {
+    "topic": "Paraphrased Questions",
+    "author": "pl",
+    "question": "By what factor did the reinforcement-learning-based electrospinning system decrease nanofiber non-uniformity in the experiments by Hwang et al.?"
+  },
+  {
+    "topic": "Paraphrased Questions",
+    "author": "pl",
+    "question": "Did the Dyson Pure Cool Tower significantly enhance asthma-related health outcomes despite improving air quality in Fong et al.\u2019s study?"
+  },
+  {
+    "topic": "Paraphrased Questions",
+    "author": "pl",
+    "question": "To what extent were airborne SARS-CoV-2 RNA samples eliminated after deploying a HEPA-based portable air cleaner in Toledo households?"
+  },
+  {
+    "topic": "Paraphrased Questions",
+    "author": "pl",
+    "question": "In Hong Kong schools analyzed by Sun et al., which pollutants surpassed recommended indoor limits, and what factor primarily contributed to this exceedance?"
+  },
+  {
+    "topic": "Paraphrased Questions",
+    "author": "pl",
+    "question": "How effective was the subway-cabin purifier (SCAP) at lowering particulate levels across different Seoul metro lines?"
+  },
+  {
+    "topic": "Paraphrased Questions",
+    "author": "pl",
+    "question": "What proportion of total VOC reduction was recorded for the water-bath filtration purifier tested by Fermo et al.?"
+  },
+  {
+    "topic": "Paraphrased Questions",
+    "author": "pl",
+    "question": "How did joint operation of air purifiers and scheduled ventilation modify indoor PM and CO\u2082 levels in near-highway schools according to Rawat & Kumar?"
+  },
+  {
+    "topic": "Paraphrased Questions",
+    "author": "pl",
+    "question": "How did surface modifications using PTFE, ZnO, and OCT alter the balance between antibacterial performance, filtration efficiency, and safety in Avdeeva et al.\u2019s research?"
+  },
+  {
+    "topic": "Irrelevant or Deceptive Questions",
+    "author": "pl",
+    "question": "What is the average temperature in Washington during winter months?"
+  },
+  {
+    "topic": "Irrelevant or Deceptive Questions",
+    "author": "pl",
+    "question": "How does reinforcement learning compare to deep Q-networks in predicting stock market fluctuations?"
+  },
+  {
+    "topic": "Irrelevant or Deceptive Questions",
+    "author": "pl",
+    "question": "What are the typical dimensions of a Dyson air purifier packaging box?"
+  },
+  {
+    "topic": "Irrelevant or Deceptive Questions",
+    "author": "pl",
+    "question": "Could SARS-CoV-2 survive on outdoor metallic surfaces longer than 72 hours in tropical climates?"
+  },
+  {
+    "topic": "Irrelevant or Deceptive Questions",
+    "author": "pl",
+    "question": "What is the correlation between students\u2019 academic performance and classroom wall color?"
+  },
+  {
+    "topic": "Irrelevant or Deceptive Questions",
+    "author": "pl",
+    "question": "How many subway lines operate in Seoul\u2019s metropolitan network as of 2025?"
+  },
+  {
+    "topic": "Irrelevant or Deceptive Questions",
+    "author": "pl",
+    "question": "What percentage of VOCs is naturally produced by pine forests?"
+  },
+  {
+    "topic": "Irrelevant or Deceptive Questions",
+    "author": "pl",
+    "question": "Does natural ventilation affect the sound quality in classrooms used for music education?"
+  },
+  {
+    "topic": "Irrelevant or Deceptive Questions",
+    "author": "pl",
+    "question": "How do PTFE coatings impact the flavor retention in non-stick cookware?"
+  },
+  {
+    "topic": "Irrelevant or Deceptive Questions",
+    "author": "pl",
+    "question": "What are the global sales figures of portable air purifiers between 2020 and 2024?"
+  }
+]
